@@ -36,13 +36,14 @@ class Schedule:
                 #only add employees who have not finished their minimum hours
                 for _ in range(employee.get_min_hours()):
                     self.schedule[next_available_slot].append(employee.get_name())
+                    employee.add_hours_worked(1)
                     next_available_slot = next_available_slot +1
 
                     #if there are no more slots available reset to start of schedule
                     if next_available_slot >= self.total_work_week_hours:
                         next_available_slot = 0
 
-                employee.add_hours_worked(employee.get_min_hours())
+                
 
         return next_available_slot
 
