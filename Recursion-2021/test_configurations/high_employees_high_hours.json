@@ -1,0 +1,24 @@
+{ 
+	"Name":"configuration1",
+	"Person":[	{"Id":1,"Name":"A", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":2,"Name":"B", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":3,"Name":"C", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":4,"Name":"D", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":5,"Name":"E", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":6,"Name":"F", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":7,"Name":"G", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":8,"Name":"H", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":9,"Name":"I", "MinHoursPerWeek":"32","MaxHoursPerWeek":"40" },
+				{"Id":10,"Name":"J", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":11,"Name":"K", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":12,"Name":"L", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":13,"Name":"M", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":11,"Name":"N", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":15,"Name":"O", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":16,"Name":"P", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":17,"Name":"Q", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":18,"Name":"R", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":19,"Name":"S", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" },
+				{"Id":20,"Name":"T", "MinHoursPerWeek":"40","MaxHoursPerWeek":"40" }]
+}
+
