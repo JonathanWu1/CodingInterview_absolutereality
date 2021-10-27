@@ -21,13 +21,13 @@ def main():
     #Try opening file in current directory
     try:
         with open(args.config_file_name) as ed:
-            employee_data = json.load(ed)
+            file_data = json.load(ed)
     except FileNotFoundError as e:
         print(f"File {args.config_file_name} not found in directory")
         return
 
     #Create list of employee objects
-    employees = [Employee(e.get("Id"), e.get("Name"),int(e.get("MinHoursPerWeek")),int(e.get("MaxHoursPerWeek"))) for e in employee_data.get("Person")]
+    employees = [Employee(e.get("Id"), e.get("Name"),int(e.get("MinHoursPerWeek")),int(e.get("MaxHoursPerWeek"))) for e in file_data.get("Person")]
     
     #Create initial schedule
     schedule = Schedule(employees)
@@ -37,7 +37,10 @@ def main():
     permutations_ = create_permutations(schedule, args.max, 40)
     
     #write to csv
-    with open(f"{args.config_file_name}.csv", "w", newline='') as output:
+    file_name = file_data.get("Name")
+    if not file_name:
+        file_name = args.config_file_name
+    with open(f"{file_name}.csv", "w", newline='') as output:
         output_writer = csv.writer(output, delimiter=",")
         for i,permutation in enumerate(permutations_):
             #reshape schedule
