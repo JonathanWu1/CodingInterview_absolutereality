@@ -10,6 +10,11 @@ class Employee:
     max_hours : int
     hours_worked : int = 0
     
+    def __post_init__(self):
+        #Resets max hours to min hours
+        if self.min_hours > self.max_hours:
+            self.max_hours = self.min_hours
+
     def __str__(self):
         return self.name
 
