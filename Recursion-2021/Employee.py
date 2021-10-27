@@ -34,6 +34,9 @@ class Employee:
     def get_min_hours(self):
         return self.min_hours
 
+    def get_overtime_hours(self):
+        return  self.hours_worked - self.max_hours if self.hours_worked > self.max_hours else 0
+
     def can_still_work(self):
         #checks if employee has reached their maximum number of hours
         if self.hours_worked < self.max_hours:

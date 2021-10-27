@@ -37,7 +37,7 @@ def main():
     permutations_ = create_permutations(schedule, args.max, 40)
     
     #write to csv
-    with open("schedule.csv", "w") as output:
+    with open(f"{args.config_file_name}.csv", "w", newline='') as output:
         output_writer = csv.writer(output, delimiter=",")
         for i,permutation in enumerate(permutations_):
             #reshape schedule
@@ -54,25 +54,25 @@ def main():
             reshaped_permutation = numpy.hstack((time_slot, reshaped_permutation))
 
             #Add empty column at the end of the schedule data
-            reshaped_permutation = numpy.pad(reshaped_permutation, (0,1), 'constant', constant_values="")
+            reshaped_permutation = numpy.pad(reshaped_permutation, ((0,0),(0,1)), 'constant', constant_values="")
 
-            #Pad the smaller array to match the dimension of the larger array
+            #Pad end of the x-axis of the the smaller array to match the dimension of the larger array
             if employee_data.shape[0] > reshaped_permutation.shape[0]:
-                reshaped_permutation = numpy.pad(reshaped_permutation, (0,employee_data.shape[0]-reshaped_permutation.shape[0]), 'constant', constant_values="")
+                reshaped_permutation = numpy.pad(reshaped_permutation, ((0,employee_data.shape[0]-reshaped_permutation.shape[0]),(0, 0)), 'constant', constant_values="")
             else:
-                employee_data = numpy.pad(employee_data, (0,reshaped_permutation.shape[0] - employee_data.shape[0]), 'constant', constant_values="")
-            
+                employee_data = numpy.pad(employee_data, ((0,reshaped_permutation.shape[0]-employee_data.shape[0]),(0, 0)), 'constant', constant_values="")
+                
             #Horizontal stack the schedule and work hours
             data = numpy.hstack((reshaped_permutation, employee_data))
-
+            
             #Write Headers
-            output_writer.writerow([f"Distribution {i+1}", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "", "", "WorkingHoursMin", "WorkingHoursMax", "TotalWorkingHours"])
+            output_writer.writerow([f"Distribution {i+1}", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "", "", "WorkingHoursMin", "WorkingHoursMax", "TotalWorkingHours", "Overtime"])
             
             #Print schedule data
             for row in data:
                 output_writer.writerow(row)
 
-            output_writer.writerow(["\n"])
+            output_writer.writerow([""])
 
 
 if __name__ == "__main__":

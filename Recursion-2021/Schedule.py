@@ -6,7 +6,6 @@ class Schedule:
         self.employees = employees
         self.schedule = schedule
         self.total_work_week_hours = kwargs.get("total_work_week_hours")
-
         #set default work week hours 
         if self.total_work_week_hours == None:
             self.total_work_week_hours = 40
@@ -20,7 +19,7 @@ class Schedule:
 
     def get_employee_hours(self):
         #Returns list of employee data for employees in the schedule
-        return [[employee.get_name(), employee.get_min_hours(), employee.get_max_hours(), employee.get_hours_worked()] for employee in self.employees]
+        return [[employee.get_name(), employee.get_min_hours(), employee.get_max_hours(), employee.get_hours_worked(), employee.get_overtime_hours()] for employee in self.employees]
 
     def create_minimal_schedule(self):
         #Only assigns hours to fill the minimum required work hours for each employee
@@ -29,45 +28,58 @@ class Schedule:
         #iniitalize empty schedule
         self.schedule = [[] for _ in range(self.total_work_week_hours)]
 
-        next_available_slot = 0
+        
 
         for employee in self.employees:
             if not employee.finished_minimum_hours():
                 #only add employees who have not finished their minimum hours
                 for _ in range(employee.get_min_hours()):
-                    self.schedule[next_available_slot].append(employee.get_name())
-                    employee.add_hours_worked(1)
-                    next_available_slot = next_available_slot +1
+                    if employee.get_name() not in self.schedule[self.next_available_slot]:
+                        self.schedule[self.next_available_slot].append(employee.get_name())
+                        employee.add_hours_worked(1)
+                        self.next_available_slot = self.next_available_slot +1
 
                     #if there are no more slots available reset to start of schedule
-                    if next_available_slot >= self.total_work_week_hours:
-                        next_available_slot = 0
-
-                
-
-        return next_available_slot
+                    if self.next_available_slot >= self.total_work_week_hours:
+                        self.next_available_slot = 0
 
 
-    def fill_empty_slots(self, next_available_slot):
+
+    def fill_empty_slots(self):
         #Fill any remaining slots with employees who have not reached max working hours
         for employee in self.employees:
             if employee.can_still_work():
-                for _ in range(employee.get_max_hours()):
+                for _ in range(employee.get_max_hours()-1):
                     #if schedule is full stop trying to add employees
-                    if next_available_slot >= self.total_work_week_hours:
+                    if self.next_available_slot >= self.total_work_week_hours:
                         break
-                    self.schedule[next_available_slot].append(employee.get_name())
+                    if employee.get_name() not in self.schedule[self.next_available_slot]:
+                        self.schedule[self.next_available_slot].append(employee.get_name())
+                        employee.add_hours_worked(1)
+                        self.next_available_slot = self.next_available_slot +1
+        
+    def fill_overtime(self):
+        #Fills any empty slots with employees with overtime
+        while self.next_available_slot < self.total_work_week_hours:
+            for employee in self.employees:
+                #if schedule is full stop trying to add employees
+                if self.next_available_slot >= self.total_work_week_hours:
+                    break
+                if employee.get_name() not in self.schedule[self.next_available_slot]:
+                    self.schedule[self.next_available_slot].append(employee.get_name())
                     employee.add_hours_worked(1)
-                    next_available_slot = next_available_slot +1
-                    
+                    self.next_available_slot = self.next_available_slot +1
 
     def create_schedule(self):
+        self.next_available_slot = 0
         #Creates a schedule fulfilling the minimum requirements for the week 
-        next_available_slot = self.create_minimal_schedule()
-
+        self.create_minimal_schedule()
         #If there are empty slots then try and fill it with employees
-        if next_available_slot < len(self.schedule):
-            self.fill_empty_slots(next_available_slot)
+        if [] in self.schedule:
+            self.fill_empty_slots()
+        #If there are empty slots then try and fill it with employees with overtime
+        if [] in self.schedule:
+            self.fill_overtime()
     
     
     def get_formatted_schedule(self, shape= (8,5)):
