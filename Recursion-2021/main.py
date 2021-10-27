@@ -1,9 +1,10 @@
 import json
 import argparse
-from Employee import Employee
-from Schedule import Schedule
 import csv
 import numpy
+
+from Employee import Employee
+from Schedule import Schedule
 from permutations import create_permutations
                
 def main():
