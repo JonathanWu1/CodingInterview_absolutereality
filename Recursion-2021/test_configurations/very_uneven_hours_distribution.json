@@ -1,0 +1,7 @@
+{ 
+	"Name":"",
+	"Person":[	{"Id":1,"Name":"Tim", "MinHoursPerWeek":"2","MaxHoursPerWeek":"100" },
+				{"Id":2,"Name":"Kim", "MinHoursPerWeek":"39","MaxHoursPerWeek":"40" },
+				{"Id":3,"Name":"Tom", "MinHoursPerWeek":"6","MaxHoursPerWeek":"40" }]
+}
+

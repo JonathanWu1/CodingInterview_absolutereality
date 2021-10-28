@@ -21,6 +21,11 @@ class Schedule:
         #Returns list of employee data for employees in the schedule
         return [[employee.get_name(), employee.get_min_hours(), employee.get_max_hours(), employee.get_hours_worked(), employee.get_overtime_hours()] for employee in self.employees]
 
+    def add_employee_to_slot(self, employee):
+        self.schedule[self.next_available_slot].append(employee.get_name())
+        employee.add_hours_worked(1)
+        self.next_available_slot = self.next_available_slot +1
+        
     def create_minimal_schedule(self):
         #Only assigns hours to fill the minimum required work hours for each employee
         #for each employee add them once for each hour in their minimum required hours
@@ -28,22 +33,18 @@ class Schedule:
         #iniitalize empty schedule
         self.schedule = [[] for _ in range(self.total_work_week_hours)]
 
-        
-
         for employee in self.employees:
             if not employee.finished_minimum_hours():
                 #only add employees who have not finished their minimum hours
                 for _ in range(employee.get_min_hours()):
-                    if employee.get_name() not in self.schedule[self.next_available_slot]:
-                        self.schedule[self.next_available_slot].append(employee.get_name())
-                        employee.add_hours_worked(1)
-                        self.next_available_slot = self.next_available_slot +1
-
                     #if there are no more slots available reset to start of schedule
                     if self.next_available_slot >= self.total_work_week_hours:
                         self.next_available_slot = 0
+                        
+                    if employee.get_name() not in self.schedule[self.next_available_slot]:
+                        self.add_employee_to_slot(employee)
 
-
+                    
 
     def fill_empty_slots(self):
         #Fill any remaining slots with employees who have not reached max working hours
@@ -54,9 +55,7 @@ class Schedule:
                     if self.next_available_slot >= self.total_work_week_hours:
                         break
                     if employee.get_name() not in self.schedule[self.next_available_slot]:
-                        self.schedule[self.next_available_slot].append(employee.get_name())
-                        employee.add_hours_worked(1)
-                        self.next_available_slot = self.next_available_slot +1
+                        self.add_employee_to_slot(employee)
         
     def fill_overtime(self):
         #Fills any empty slots with employees with overtime
@@ -66,25 +65,37 @@ class Schedule:
                 if self.next_available_slot >= self.total_work_week_hours:
                     break
                 if employee.get_name() not in self.schedule[self.next_available_slot]:
-                    self.schedule[self.next_available_slot].append(employee.get_name())
-                    employee.add_hours_worked(1)
-                    self.next_available_slot = self.next_available_slot +1
+                    self.add_employee_to_slot(employee)
 
     def create_schedule(self):
         self.next_available_slot = 0
+        #sort employees based on total hours they can work
+        self.employees.sort(key=lambda x: x.get_min_hours(), reverse=True)
+
         #Creates a schedule fulfilling the minimum requirements for the week 
         self.create_minimal_schedule()
+
         #If there are empty slots then try and fill it with employees
         if [] in self.schedule:
             self.fill_empty_slots()
+
         #If there are empty slots then try and fill it with employees with overtime
         if [] in self.schedule:
             self.fill_overtime()
+
     
     
-    def get_formatted_schedule(self, shape= (8,5)):
+    def get_formatted_schedule(self, shape= (5,8)):
         #returns a reshaped list of employees in the order of the schedule
-        return numpy.array([(", ").join(i) for i in self.schedule]).reshape(shape)
+        reshaped_schedule = numpy.array([(", ").join(i) for i in self.schedule]).reshape(shape)
+
+        #Sort each day so that employees have consequtive time slots
+        for i,x in enumerate(reshaped_schedule):
+            reshaped_schedule[i] = sorted(x)
+            
+        reshaped_schedule = numpy.rot90(reshaped_schedule,-1)
+        
+        return reshaped_schedule
 
 
 
