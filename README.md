@@ -11,7 +11,9 @@ Options:
 ```
 
 ## Releases:
-Source code and exe file can be found [here](https://github.com/JonathanWu1/CodingInterview_absolutereality/releases/tag/v1.0.0).
+Source code and exe file can be found here:
+[v1.0](https://github.com/JonathanWu1/CodingInterview_absolutereality/releases/tag/v1.0.0).
+[v1.1](https://github.com/JonathanWu1/CodingInterview_absolutereality/releases/tag/v1.1).
     
 ## Issues with generating permutations:
 The permutation algorithm was made by me so there are limitations to it's usage.
