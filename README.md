@@ -74,11 +74,10 @@ And please implement the following elements
 3.  place a horizontal slider what changes the saturation of the eye 
 4.  place a horizontal slider what changes the zoom (a zoom function is already on the right click with mouse movment)
 5.  place a vertical slider (without further function)
-E.  place a vertical slider (without further function)
 6.  when you click on 6. a frame should come around the picture 
 7.  when you click on 7. a frame should come around the picture 
 8.  when you click on 8. a frame should come around the picture 
-D.  Radio-Buttons for
+9.  Radio-Buttons for
 	 "kein Glaukom"
 	 "Glaukom Verdacht"
 	 "Glaukom frühes Stadium"
@@ -87,15 +86,15 @@ D.  Radio-Buttons for
 
 # Following comments can be used to find the code I have added
 HTML: 
-Patient data panel
-Radio buttons panel
-adjustment sliders panel
-control button panel
-image selection panel
+	Patient data panel
+	Radio buttons panel
+	adjustment sliders panel
+	control button panel
+	image selection panel
 
 Javascript:
-Retina image selection
-Image adjustment sliders
+	Retina image selection
+	Image adjustment sliders
 
 CSS:
-Additional CSS
+	Additional CSS
