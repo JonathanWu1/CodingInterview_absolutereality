@@ -86,15 +86,15 @@ And please implement the following elements
 
 # Following comments can be used to find the code I have added
 HTML: 
-	Patient data panel
-	Radio buttons panel
-	adjustment sliders panel
-	control button panel
-	image selection panel
+1.	Patient data panel
+2.	Radio buttons panel
+3.	adjustment sliders panel
+4.	control button panel
+5.	image selection panel
 
 Javascript:
-	Retina image selection
-	Image adjustment sliders
+1.	Retina image selection
+2.	Image adjustment sliders
 
 CSS:
-	Additional CSS
+1.	Additional CSS
