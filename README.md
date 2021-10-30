@@ -84,3 +84,18 @@ D.  Radio-Buttons for
 	 "Glaukom frühes Stadium"
 	 "Glaukom mittleres Stadium"
 	 "Glaukom spätes Stadium"
+
+# Following comments can be used to find the code I have added
+HTML: 
+<!-- Patient data panel -->
+<!-- Radio buttons panel -->
+<!-- adjustment sliders panel  -->
+<!-- control button panel -->
+<!-- image selection panel -->
+
+Javascript:
+// Retina image selection
+// Image adjustment sliders
+
+CSS:
+/* Additional CSS */

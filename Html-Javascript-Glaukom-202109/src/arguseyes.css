@@ -287,14 +287,13 @@ h3 {
 
 
 /* Additional CSS */
+
+/* generic css for all panels */
 .control-panel{
     position: absolute; 
     background-color: rgba(46, 49, 49, 0.6);
     width: 25vw;
     padding: 1vw;
-}
-:root {
-    --color-secondary: #dcf0ff;
 }
 .btm-margin{
     margin-bottom: 2vh;
@@ -338,12 +337,7 @@ h3 {
     overflow:hidden;
     margin-bottom : 1vh;
 }
-.vorbefundung-button-row{
-    /* position:absolute;
-    bottom: 0;
-    width:90%;
-    margin-bottom: 1vh; */
-}
+
 /* Info Panel */
 .info-panel{
     top : 9vh;
@@ -406,8 +400,7 @@ label.info-content{
     margin-bottom: 1vh;
 }
 
-
-
+/* jquery ui horizontal slider customization */
 ul.slider-list{
     color:white;
     opacity: 100% !important;
@@ -430,9 +423,8 @@ ul.slider-list{
     background: url('handle.png') no-repeat !important;
     margin-left:0px !important;
 }
-.ui-state-hover{
-    
-}
+
+/* custom vertical sliders */
 .vertical-slider{
     -webkit-appearance: none !important;
     height: 100%;
@@ -447,6 +439,7 @@ ul.slider-list{
     background: url('handle-rotated.png') no-repeat;
 }
 
+/* image panel */
 .images-row{
     overflow: hidden;
     margin-top: 1vh;
@@ -481,7 +474,7 @@ ul.slider-list{
     border-width: 2px;
 }
 
-
+/* radio buttons */
 input[type="radio"] {
     -webkit-appearance: none;
     margin: 0;

@@ -49,6 +49,8 @@
 					</script>
 				</div>
 			</div>
+
+			<!-- Patient data panel -->
 			<div class="control-panel info-panel rounded-base panel-left">
 				<div class = "row">
 					<div class = "col-sm-12">
@@ -104,6 +106,7 @@
 				</div>
 			</div>
 
+			<!-- Radio buttons panel -->
 			<div class="control-panel radio-selection-panel rounded-base panel-left">
 				<div class = "row">
 					<div class = "col-sm-11">
@@ -164,17 +167,12 @@
 					<div class = "col-sm-1">
 						<input type="range" min="1" max="1" value="1" orient = "vertical" class="vertical-slider">
 					</div>
-					
 				</div>
-				
-				
 				<div class = "row vorbefundung-button-row">
 					<button type="button" class = "btn btn-primary info-button" id = "vorbefundung-button" disabled> <strong>Vorbefundung AI</strong></button>
 				</div>
-				
-					
 			</div>
-
+			<!-- adjustment sliders panel  -->
 			<div class="control-panel slider-panel rounded-base panel-right">
 				<ul class="slider-list">
 					<li class="">
@@ -203,6 +201,8 @@
 					</li>
 				</ul>
 			</div>
+
+			<!-- control button panel -->
 			<div class="control-panel control-buttons-panel rounded-base panel-right">
 				<div class = "control-buttons-row">
 					<div class = "control-buttons">
@@ -234,6 +234,7 @@
 					
 				</div>		
 			</div>
+			<!-- image selection panel -->
 			<div class="control-panel image-selection-panel rounded-base panel-right">
 				<div>
 					<div class = "control-buttons">
@@ -327,6 +328,7 @@
 		</div>
 	</div>
 	
+	<!-- removed jquery min and added full jquery and jquery ui for sliders -->
 	<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script> -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -467,13 +469,17 @@
             $(".menu-item").click(function () {
                 $("#menu-panel").css("visibility", "hidden");
             });
+
+			// Retina image selection
+			// add white border when image is clicked
 			$(".retina-image-container").on("click", (event)=>{
 				$(".retina-image-container").removeClass("white-border")
-				console.log()
 				$(event.target.parentElement).addClass("white-border")
 			})
 			
-			
+			// Image adjustment sliders
+			// Initialize jquery ui sliders for smooth value change
+			// change brightness when brightness slider is moved
 			$("#brightness-slider").slider({
 				step:1,
 				min:0,
@@ -486,6 +492,7 @@
 					$("#retina-img").css({"transform" : "scale("+zoom_value+"%)"})
 				}
 			})
+			// change contrast when contrast slider is moved
 			$("#contrast-slider").slider({
 				step:1,
 				min:0,
@@ -498,6 +505,7 @@
 					$("#retina-img").css({"transform" : "scale("+zoom_value+"%)"})
 				}
 			})
+			// change saturation when saturation slider is moved
 			$("#saturation-slider").slider({
 				step:1,
 				min:0,
@@ -510,6 +518,7 @@
 					$("#retina-img").css({"transform" : "scale("+zoom_value+"%)"})
 				}
 			})
+			// change zoom when zoom slider is moved
 			$("#zoom-slider").slider({
 				step:1,
 				min:0,
