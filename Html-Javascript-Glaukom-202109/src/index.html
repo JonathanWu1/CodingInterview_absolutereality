@@ -1,0 +1,533 @@
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="robots" content="noindex">
+
+    <title>ArgusEyes QuickCheck</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;400;500;600;700&display=swap">
+	<link rel="stylesheet" href="assets/fontawesome-free-5.15.3-web/css/all.min.css">
+	<link rel="stylesheet" href="arguseyes.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+	<link rel="icon" href="favicon.png" type="image/x-icon">
+	<script src="https://kit.fontawesome.com/75514ed3e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="">
+	<div class="container" id="top">
+		<div id="menu" class="row thin">
+			<svg id="menu-burger" fill="#fff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><path class="st0" d="M85.5,55.5h-70c-2.8,0-5-2.2-5-5c0-2.8,2.2-5,5-5h70c2.8,0,5,2.2,5,5C90.5,53.3,88.3,55.5,85.5,55.5z   M85.5,35.5h-70c-2.8,0-5-2.2-5-5s2.2-5,5-5h70c2.8,0,5,2.2,5,5S88.3,35.5,85.5,35.5z M15.5,65.5h70c2.8,0,5,2.2,5,5s-2.2,5-5,5h-70  c-2.8,0-5-2.2-5-5S12.7,65.5,15.5,65.5z"></path></svg>
+			<div id="menu-panel">
+				<ul class="menu-list">
+					<li class="menu-item"><a class="menu-link" href="#augenoptiker">F&uuml;r Augenoptiker</a></li>
+					<li class="menu-item"><a class="menu-link" href="#augenaerzte">F&uuml;r Augen&auml;rzte</a></li>
+					<li class="menu-item"><a class="menu-link" id="kontakt-menu" href="#kontakt">Kontakt</a></li>
+					<li class="menu-item"><a class="menu-link" href="#impressum">Impressum</a></li>
+					<li class="menu-item"><a class="menu-link" href="#datenschutz">Datenschutz</a></li>
+				</ul>
+			</div>
+			<div class="menu-logo w100">
+				<a class="menu-link" href="#top"><img src="logo.svg"></a></li>
+			</div>
+		</div>
+		
+		<div id="dimmer">
+			
+		</div>
+	</div> <!-- container -->
+	
+	<div class="container">
+		<div class="row">
+			<div class="w100 text-center">
+				<div id="retina-container" class="col-md">
+					<img id="retina-img" src="" />
+					<script>
+						document.getElementById('retina-img').height = window.innerHeight;
+					</script>
+				</div>
+			</div>
+			<div class="control-panel info-panel rounded-base panel-left">
+				<div class = "row">
+					<div class = "col-sm-12">
+						<label class = "info-header"> Patient </label>
+					</div>
+				</div>
+				
+				<div class = "row btm-margin">
+					<div class = "col-sm-6">
+						<label class = "info-content"> ID 1234-5678 <br> geb. 9876 (60 Jahre)</label>
+					</div>
+					<div class = "col-sm-6">
+						<button type = "button" class = "btn btn-secondary" id = "notfallkontakt-button" disabled>Notfallkontakt</button>
+					</div>
+					
+				</div>
+				<div class = "row">
+					<div class = "col-sm-6" >
+						<label class = "info-header">Optiker </label>
+					</div>
+					<div class = "col-sm-6">
+						<label class = "info-header">Optiker Kontakt</label>
+					</div>
+				</div>
+				<div class = "row btm-margin">
+					<div class = "col-sm-6">
+						<label class = "info-content">Glasklar GMBH Jungfernstieg 49 20354 Hamburg </label>
+					</div>
+					<div class = "col-sm-6">
+						<label class = "info-content">Marie Berger 0175/4462322 Marie@glasklar_optiker.de</label>
+					</div>
+				</div>
+				<div class = "row btm-margin">
+					<div class = "col-sm-12">
+						<button type="button" class = "btn btn-secondary info-button"> <strong>Mitteilungstext</strong></button>
+					</div>					
+				</div>
+				<div class = "row btm-margin">
+					<div class = "col-sm-12">
+						<button type="button" class = "btn btn-primary info-button"> <strong>Befundung erneut senden</strong></button>
+					</div>					
+				</div>
+				<div class = "row btm-margin">
+					<div class = "col-sm-12">
+						<center>
+							<label class = "info-content info-notification-status">
+								Befundung gesendet am 11.7.21 um 11:13 Uhr
+								<br>
+								Gelesen am 12.7.21 um 09:03 Uhr
+							</label>
+						</center>
+					</div>					
+				</div>
+			</div>
+
+			<div class="control-panel radio-selection-panel rounded-base panel-left">
+				<div class = "row">
+					<div class = "col-sm-11">
+						<div class = "radio-dropdown-group">
+							<div class = "row">
+								<div class = "col-sm-12" >
+									<label class = "info-header">Befundung </label>
+								</div>
+							</div>
+							<div class = "row">
+								<div class = "col-sm-1">
+									<label class = "info-header" data-toggle="collapse" href="#galukom-collapse"><i class="fas fa-sort-down dropdown-arrow"></i></label>
+								</div>
+								<div class = "col-sm-3" >
+									<label class = "info-header" id = "galukom-header">
+										Galukom 
+									</label>
+								</div>
+								<div class = "col-sm-6" >
+									<button type = "button" class = "btn btn-secondary" disabled><i class="fas fa-arrow-right"></i>  Experte</button> 
+								</div>
+							</div>
+							<div class = "row">
+								<div class = "col-sm-1"></div>
+								<div class = "col-sm-11">
+									<div class="collapse" id="galukom-collapse">
+										<form>
+											<input type="radio" name="radio1" value="1"> <label class = "galukom-radio-text"> kein Galukom</label>
+											<br>
+											<input type="radio" name="radio1" value="2"> <label class = "galukom-radio-text"> Galukom Verdacht</label>
+											<br>
+											<input type="radio" name="radio1" value="3"> <label class = "galukom-radio-text"> Galukom fr&uuml;hes Stadium</label>
+											<br>
+											<input type="radio" name="radio1" value="4"> <label class = "galukom-radio-text"> Galukom mittleres Stadium</label>
+											<br>
+											<input type="radio" name="radio1" value="5"> <label class = "galukom-radio-text"> Galukom spates Stadium</label>
+										</form>
+										
+									</div>
+								</div>
+								
+							</div>
+							<div class = "row">
+								<div class = "col-sm-1">
+									<label class = "info-header" data-toggle="collapse" ><i class="fas fa-sort-down dropdown-arrow"></i></label>
+								</div>
+								<div class = "col-sm-3" >
+									<label class = "info-header" id = "diabetes-header">
+										Diabetes 
+									</label>
+								</div>
+								<div class = "col-sm-6" >
+									<button type = "button" class = "btn btn-secondary" disabled><i class="fas fa-arrow-right"></i>  Experte</button> 
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "col-sm-1">
+						<input type="range" min="1" max="1" value="1" orient = "vertical" class="vertical-slider">
+					</div>
+					
+				</div>
+				
+				
+				<div class = "row vorbefundung-button-row">
+					<button type="button" class = "btn btn-primary info-button" id = "vorbefundung-button" disabled> <strong>Vorbefundung AI</strong></button>
+				</div>
+				
+					
+			</div>
+
+			<div class="control-panel slider-panel rounded-base panel-right">
+				<ul class="slider-list">
+					<li class="">
+						<label for = "brightness-slider">Brightness</label>
+						<label id = "brightness-slider-value" class = "align-rgt"> 100 </label>
+						<br>
+						<div class = "slider" id = "brightness-slider"></div>
+						<!-- <input type="range" min="1" max="200" value="100" step = "1" class="slider" id="brightness-slider"> -->
+					</li>
+					<li class="">
+						<label for = "contrast-slider">Contrast</label>
+						<label id = "contrast-slider-value" class = "align-rgt"> 100 </label>
+						<br>
+						<div class = "slider" id = "contrast-slider"></div>
+						<!-- <input type="range" min="1" max="200" value="100" step = "1" class="slider" id="contrast-slider"> -->
+					</li>
+					<li class="">
+						<label for = "saturation-slider">Saturation</label>
+						<label id = "saturation-slider-value" class = "align-rgt"> 100 </label>
+						<br>
+						<div class = "slider" id = "saturation-slider"></div>
+						<!-- <input type="range" min="1" max="200" value="100" step = "1" class="slider" id="saturation-slider"> -->
+					</li>
+					<li class="">
+						<label for = "zoom-slider">Zoom</label>
+						<label id = "zoom-slider-value" class = "align-rgt"> 100 </label>
+						<br>
+						<div class = "slider" id = "zoom-slider"></div>
+						<!-- <input type="range" min="1" max="200" value="100" step = "1" class="slider" id="zoom-slider"> -->
+					</li>
+				</ul>
+			</div>
+			<div class="control-panel control-buttons-panel rounded-base panel-right">
+				<div class = "control-buttons-row">
+					<div class = "control-buttons">
+						<img class = "control-button-img" src = "arrow.png">
+					</div>
+					<div class = "control-buttons">
+						<img class = "control-button-img"  src = "dots.png">
+					</div>
+					<div class = "control-buttons align-rgt">
+						<img class = "control-button-img"  src = "isnt.png">
+					</div>
+					<div class = "control-buttons align-rgt">
+						<img class = "control-button-img"  src = "text.png">
+					</div>
+				</div>
+				<div>
+					<div class = "control-buttons">
+						<img class = "control-button-img" src = "undo.png">
+					</div>
+					<div class = "control-buttons">
+						<img class = "control-button-img flip-horizontally"  src = "undo.png">
+					</div>
+					<div class = "control-buttons">
+						<img class = "control-button-img"  src = "reset.png">
+					</div>
+					<div class = "control-buttons align-rgt">
+						<img class = "control-button-img"  src = "colors.png">
+					</div>
+					
+				</div>		
+			</div>
+			<div class="control-panel image-selection-panel rounded-base panel-right">
+				<div>
+					<div class = "control-buttons">
+						<img class = "control-button-img" src = "tiles.png">
+					</div>
+					<div class = "control-buttons">
+						<img class = "control-button-img"  src = "list.png">
+					</div>
+					<div class = "control-buttons">
+						<img class = "control-button-img"  src = "layers.png">
+					</div>
+					<div class = "control-buttons align-rgt">
+						<img class = "control-button-img"  src = "lr.png">
+					</div>
+				</div>
+				<div>
+					<div class = "row images-row">
+						<div class = "col-sm-11">
+							<div class = "row">
+								<div class = "retina-image-container rounded-base ">
+									<img class = "retina-images " src = "retina.jpg">
+								</div>
+								
+								<label class = "retina-image-data">
+									<span class = "date"> 2021-07-01 09:41 </span>
+									<br>
+									<span class = "available-yes"> Befund:ja </span> 
+									<br> 
+									<span class = "available-yes"> Gesendet: 2021-07-01 10:17 </span>
+									
+								</label>
+							</div>
+							<div class = "row">
+								<div class = "retina-image-container rounded-base white-border">
+									<img class = "retina-images " src = "retina.jpg">
+								</div>
+								
+								<label class = "retina-image-data">
+									<span class = "date"> 2021-07-01 09:41 </span>
+									<br>
+									<span class = "available-yes"> Befund:ja </span> 
+									<br> 
+									<span class = "available-no"> Gesendet: 2021-07-01 10:17 </span>
+									
+								</label>
+							</div>
+							<div class = "row">
+								<div class = "retina-image-container rounded-base ">
+									<img class = "retina-images " src = "retina.jpg">
+								</div>
+								
+								<label class = "retina-image-data">
+									<span class = "date"> 2021-07-01 09:41 </span>
+									<br>
+									<span class = "available-no"> Befund:ja </span> 
+									<br> 
+									<span class = "available-no"> Gesendet: 2021-07-01 10:17 </span>
+									
+								</label>
+							</div>
+							<div class = "row">
+								<div class = "retina-image-container rounded-base ">
+									<img class = "retina-images " src = "retina.jpg">
+								</div>
+								
+								<label class = "retina-image-data">
+									<span class = "date"> 2021-07-01 09:41 </span>
+									<br>
+									<span class = "available-no"> Befund:ja </span> 
+									<br> 
+									<span class = "available-no"> Gesendet: 2021-07-01 10:17 </span>
+									
+								</label>
+							</div>
+							
+						</div>
+						<div class = "col-sm-1">
+							<input type="range" min="1" max="1" value="1" orient = "vertical" class="vertical-slider">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container" id="status">
+		<div class="row w100">
+			<div class="col-md">
+				<div id="status-text">Scale:</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script> -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="assets/parallax.min.js"></script>
+	
+	<script>
+        $(document).ready(function () {
+			var imgLoaded = new Image();
+			var imgRetina = document.getElementById('retina-img'); // our HTML img element
+			var zoomScale = 1.0, xPos = 0, yPos = 0; // zoomScale = 1.0 means the retina vertically covers the viewport, regardless of VP size
+			var bImageLoaded = false, bKeyStrg = false;
+			
+			// write status line:
+			function displayStatus() {
+				var st = "";
+				st += "Zoom: " + Math.round(imgRetina.height / imgRetina.naturalHeight * 100) + "%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+				st += "Maus-rechts:bewegen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+				st += "Strg+Maus-rechts: zoomen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+				$('#status-text').html(st);
+			}
+			
+			function setUpRetinaImg() {
+				imgLoaded.onload = function () {
+					imgRetina.src = this.src;
+					imgRetina.height = window.innerHeight; // scales the reting img to the vertical VP size
+					document.getElementById("retina-container").style.height = window.innerHeight; // make sure parent div always hat full VP height
+					
+					// Register the img element for zoom/move:
+					zoomElement(document.getElementById("retina-img"));
+					
+					displayStatus();
+					
+					bImageLoaded = true;
+				};
+				imgLoaded.src = 'retina.jpg';
+
+			}
+			setUpRetinaImg();
+			
+			// Adapt img to changing window height, keeping the current view, if possible:
+			function resizeWindow() {
+				if (bImageLoaded)
+				{
+					imgRetina.height = window.innerHeight * zoomScale;
+					document.getElementById("retina-container").style.height = window.innerHeight;
+					if (zoomScale > imgRetina.naturalHeight / window.innerHeight)
+					{
+						zoomScale = imgRetina.naturalHeight / window.innerHeight;
+						imgRetina.height = window.innerHeight * zoomScale;
+					}
+					displayStatus();
+				}
+			}
+			window.onresize  = resizeWindow;
+			
+			// Zoom Retina mit Maustaste:
+			//
+			function zoomElement(elmnt) {
+			  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+			  
+			  elmnt.parentElement.onmousedown = zoomMouseDown;
+
+			  function zoomMouseDown(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// get the mouse cursor position at startup:
+				pos3 = e.clientX
+				pos4 = e.clientY;
+				document.onmouseup = closeZoomElement;
+				// call a function whenever the cursor moves:
+				document.onmousemove = elementZoom;
+			  }
+
+			  // Hier findet das eigentlich Gezoome statt:
+			  function elementZoom(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// calculate the new cursor position:
+				pos1 = pos3 - e.clientX;
+				pos2 = pos4 - e.clientY;
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				// set the element's new zoom:
+				if (bKeyStrg)
+				{
+					var zoomSpeed = 200;
+					zoomScale = zoomScale + pos2 / zoomSpeed; 
+					// Limit zoom to 0.5 minimum:
+					if (zoomScale < 0.5)
+						zoomScale = 0.5;
+					if (zoomScale > imgRetina.naturalHeight / window.innerHeight)
+						zoomScale = imgRetina.naturalHeight / window.innerHeight;
+					imgRetina.height = window.innerHeight * zoomScale;
+					imgRetina.parentElement.height = window.innerHeight;
+				}
+				else // move:
+				{
+					xPos -= pos1;
+					yPos -= pos2;
+					imgRetina.style.left = xPos;
+					imgRetina.style.top = yPos;
+				}				
+				displayStatus();
+			  }
+
+			  function closeZoomElement() {
+				// stop moving when mouse button is released:
+				document.onmouseup = null;
+				document.onmousemove = null;
+			  }
+			}
+			
+			// Strg gedrückt?
+			$(window).keydown(function(e){
+				if (e.ctrlKey)
+				{
+					bKeyStrg = true;
+				}
+			});
+			$(window).keyup(function(e){
+				if (e.keyCode == "17")
+				{
+					bKeyStrg = false;
+				}
+			});
+
+			// Menü:
+			$("#menu").mouseover(function () {
+                $("#menu-panel").css("visibility", "visible");
+            });
+            $("#menu-burger").click(function () {
+                $("#menu-panel").css("visibility", "visible");
+            });
+            $("#menu").mouseleave(function () {
+                $("#menu-panel").css("visibility", "hidden");
+            });
+            $(".menu-item").click(function () {
+                $("#menu-panel").css("visibility", "hidden");
+            });
+			$(".retina-image-container").on("click", (event)=>{
+				$(".retina-image-container").removeClass("white-border")
+				console.log()
+				$(event.target.parentElement).addClass("white-border")
+			})
+			
+			var brightness_value = 100, contrast_value = 100, saturation_value = 100, zoom_value = 100
+			$("#brightness-slider").slider({
+				step:1,
+				min:0,
+				max:200,
+				value:100,
+				slide: (event,ui)=>{
+					brightness_value = $("#brightness-slider").slider("value")
+					$("#brightness-slider-value").text(brightness_value)
+					$("#retina-img").css({"-webkit-filter" : "brightness("+brightness_value+"%) contrast("+contrast_value+"%) saturate("+saturation_value+"%)"})					
+					$("#retina-img").css({"transform" : "scale("+zoom_value+"%)"})
+				}
+			})
+			$("#contrast-slider").slider({
+				step:1,
+				min:0,
+				max:200,
+				value:100,
+				slide: (event,ui)=>{
+					contrast_value = $("#contrast-slider").slider("value")
+					$("#contrast-slider-value").text(contrast_value)
+					$("#retina-img").css({"-webkit-filter" : "brightness("+brightness_value+"%) contrast("+contrast_value+"%) saturate("+saturation_value+"%)"})					
+					$("#retina-img").css({"transform" : "scale("+zoom_value+"%)"})
+				}
+			})
+			$("#saturation-slider").slider({
+				step:1,
+				min:0,
+				max:200,
+				value:100,
+				slide: (event,ui)=>{
+					saturation_value = $("#saturation-slider").slider("value")
+					$("#saturation-slider-value").text(saturation_value)
+					$("#retina-img").css({"-webkit-filter" : "brightness("+brightness_value+"%) contrast("+contrast_value+"%) saturate("+saturation_value+"%)"})					
+					$("#retina-img").css({"transform" : "scale("+zoom_value+"%)"})
+				}
+			})
+			$("#zoom-slider").slider({
+				step:1,
+				min:0,
+				max:200,
+				value:100,
+				slide: (event,ui)=>{
+					zoom_value = $("#zoom-slider").slider("value")
+					$("#zoom-slider-value").text(zoom_value)
+					$("#retina-img").css({"-webkit-filter" : "brightness("+brightness_value+"%) contrast("+contrast_value+"%) saturate("+saturation_value+"%)"})					
+					$("#retina-img").css({"transform" : "scale("+zoom_value+"%)"})
+				}
+			})
+		});
+		
+	</script>
+</body>
+</html>

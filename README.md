@@ -1,5 +1,7 @@
 # CodingInterview_absolutereality
 Recursion coding interview for application at https://www.absolutereality.de/
+
+# Task1: 
 # Description:
 The program reads a set of employee data from the input file and creates a schedule and atleast 10 permutations where possible. Employees are required to fulfil their minimum time requirements but are not allowed to exceed their maximum time. If there are empty timeslots leftover employees are assigned these time slots with overtime.
 
@@ -54,3 +56,31 @@ too_many_min_hours.json
     }
 ```
 
+# Task 2
+# Description:
+
+In the src directory is the file index.html 
+Please extend the file index.html with the following elements from task.jpg. 
+
+Box1:   Text and buttons, all without function 
+Box2:   Slider 
+Box3:   Elements without function 
+Box4:   for the eye use retina.jpg, Icons are in the src-directory
+Box5:   Text and Radiobuttons
+
+And please implement the following elements 
+1.  place a horizontal slider what changes the brightness of the eye 
+2.  place a horizontal slider which changes the contrast of the eye 
+3.  place a horizontal slider what changes the saturation of the eye 
+4.  place a horizontal slider what changes the zoom (a zoom function is already on the right click with mouse movment)
+5.  place a vertical slider (without further function)
+E.  place a vertical slider (without further function)
+6.  when you click on 6. a frame should come around the picture 
+7.  when you click on 7. a frame should come around the picture 
+8.  when you click on 8. a frame should come around the picture 
+D.  Radio-Buttons for
+	 "kein Glaukom"
+	 "Glaukom Verdacht"
+	 "Glaukom frühes Stadium"
+	 "Glaukom mittleres Stadium"
+	 "Glaukom spätes Stadium"

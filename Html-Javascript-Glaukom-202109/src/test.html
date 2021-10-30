@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+</head>
+<body>
+    <div class = "slider" id ="slider">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- <script src="assets/parallax.min.js"></script> -->
+<script>
+
+$("#slider").slider({
+				step:1,
+				min:0,
+				max:200,
+				animate:true,
+                value:100,
+				slide: (event,ui)=>{
+					console.log("asdf")
+				}
+			})
+</script>
+</body>
+</html>
+

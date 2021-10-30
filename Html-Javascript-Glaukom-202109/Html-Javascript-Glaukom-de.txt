@@ -1,0 +1,27 @@
+Im Verzeichnis src ist die Datei index.html 
+Erweitere bitte die Datei index.html um folgende Elemente aus Aufgabe.jpg. 
+
+Box1:   Text und Buttons, alles ohne Funktion 
+Box2:   Slider 
+Box3:   Elemente ohne Funktion 
+Box4:   für das Auge benutze retina.jpg 
+		die Icons sind im Zip 
+Box5:   Text und Radiobuttons
+
+Und implementiere bitte folgende Elemente 
+1.  bitte ein horizontalen slider was die Helligkeit des Auges ändert 
+2.  bitte ein horizontalen slider was den Kontrast des Auges ändert 
+3.  bitte ein horizontalen slider was die Sättigung des Auges ändert 
+4.  bitte ein horizontalen slider was den Zoom ändert 
+5.  bitte ein vertikalen slider (ohne weitere Funktion)
+E.  bitte ein vertikalen slider (ohne weitere Funktion)
+6.  wenn man auf 6. klickt, soll ein Rahmen um das Bild kommen 
+7.  wenn man auf 7. klickt, soll ein Rahmen um das Bild kommen 
+8.  wenn man auf 8. klickt, soll ein Rahmen um das Bild kommen 
+D.  Radio-Buttons für 
+	 "kein Glaukom"
+	 "Glaukom Verdacht"
+	 "Glaukom frühes Stadium"
+	 "Glaukom mittleres Stadium"
+	 "Glaukom spätes Stadium"
+
