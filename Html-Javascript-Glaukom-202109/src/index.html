@@ -182,28 +182,24 @@
 						<label id = "brightness-slider-value" class = "align-rgt"> 100 </label>
 						<br>
 						<div class = "slider" id = "brightness-slider"></div>
-						<!-- <input type="range" min="1" max="200" value="100" step = "1" class="slider" id="brightness-slider"> -->
 					</li>
 					<li class="">
 						<label for = "contrast-slider">Contrast</label>
 						<label id = "contrast-slider-value" class = "align-rgt"> 100 </label>
 						<br>
 						<div class = "slider" id = "contrast-slider"></div>
-						<!-- <input type="range" min="1" max="200" value="100" step = "1" class="slider" id="contrast-slider"> -->
 					</li>
 					<li class="">
 						<label for = "saturation-slider">Saturation</label>
 						<label id = "saturation-slider-value" class = "align-rgt"> 100 </label>
 						<br>
 						<div class = "slider" id = "saturation-slider"></div>
-						<!-- <input type="range" min="1" max="200" value="100" step = "1" class="slider" id="saturation-slider"> -->
 					</li>
 					<li class="">
 						<label for = "zoom-slider">Zoom</label>
 						<label id = "zoom-slider-value" class = "align-rgt"> 100 </label>
 						<br>
 						<div class = "slider" id = "zoom-slider"></div>
-						<!-- <input type="range" min="1" max="200" value="100" step = "1" class="slider" id="zoom-slider"> -->
 					</li>
 				</ul>
 			</div>
@@ -343,7 +339,7 @@
 			var imgRetina = document.getElementById('retina-img'); // our HTML img element
 			var zoomScale = 1.0, xPos = 0, yPos = 0; // zoomScale = 1.0 means the retina vertically covers the viewport, regardless of VP size
 			var bImageLoaded = false, bKeyStrg = false;
-			
+			var brightness_value = 100, contrast_value = 100, saturation_value = 100, zoom_value = 100
 			// write status line:
 			function displayStatus() {
 				var st = "";
@@ -477,7 +473,7 @@
 				$(event.target.parentElement).addClass("white-border")
 			})
 			
-			var brightness_value = 100, contrast_value = 100, saturation_value = 100, zoom_value = 100
+			
 			$("#brightness-slider").slider({
 				step:1,
 				min:0,
