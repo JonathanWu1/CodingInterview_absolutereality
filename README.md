@@ -87,11 +87,11 @@ D.  Radio-Buttons for
 
 # Following comments can be used to find the code I have added
 HTML: 
-<!-- Patient data panel -->
-<!-- Radio buttons panel -->
-<!-- adjustment sliders panel  -->
-<!-- control button panel -->
-<!-- image selection panel -->
+"<!-- Patient data panel -->"
+"<!-- Radio buttons panel -->"
+"<!-- adjustment sliders panel  -->"
+"<!-- control button panel -->"
+"<!-- image selection panel -->"
 
 Javascript:
 // Retina image selection
